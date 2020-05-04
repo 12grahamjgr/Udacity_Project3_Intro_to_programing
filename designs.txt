@@ -51,11 +51,14 @@
     $("#me").attr('src', 'eyeball.gif');
 	$('h1').css({'color' : 'blue'});
 	sleep();
+	
+	//$("#header1").style = "color:blue;"
 }
 
   function offHover(){
     $("#me").attr('src', 'eyeball1.png');
 	$('h1').css({'color' : 'black'});
+	//$("#header1").style = "color:black;"
   }
 	
   function sleep(milliseconds) {
