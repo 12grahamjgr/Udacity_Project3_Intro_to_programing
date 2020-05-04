@@ -7,16 +7,18 @@
 </head>
 <body>
     <h1 id="header1" >Pixel Art Maker</h1>
-	<a href="#" id="numnut">
-    <img id="me" src="images/eyeball1.png" alt="eyeball" width="100" height="100" onmouseover="onHover();" 
-      onmouseout="offHover();" />
-  </a>
+
+	
+	<a href="#" id="img_anchor">
+    <img id="eyeball" src="images/eyeball1.png" alt="eyeball" width="75" height="50" onmouseover="onHover();" 
+      onmouseout="offHover();"/>
+	</a><br>
     <h2>Choose Grid Size</h2>
     <form id="sizePicker">
         Grid Height:
-        <input type="number" id="inputHeight" name="height" min="1" value="1">
+        <input type="number" id="inputHeight" name="height" min="1" value="1" max=30>
         Grid Width:
-        <input type="number" id="inputWidth" name="width" min="1" value="1">
+        <input type="number" id="inputWidth" name="width" min="1" value="1" max=30>
         <input type="submit">
     </form>
 
@@ -27,8 +29,6 @@
     <table id="pixelCanvas"></table>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js""></script>
     <script src="designs.js"></script>
-	<div class="footer">
-		<p>Developed By Rick Sepulveda</p>
-	</div>
+	
 </body>
 </html>

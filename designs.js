@@ -1,25 +1,24 @@
-// Select color input
+  //Setup colorpicker const by id
   const colorPicker = $('#colorPicker');
 
-  //Select form
+  //Setup sizePicker const by id
   const sizePicker = $('#sizePicker');
 
-  // Select size input
+  //Setup user input Height and Width const by id
   const inputHeight = $('#inputHeight');
   const inputWidth = $('#inputWidth');
 
-  //Select pixelCanvas
+  //Setup pixelCanvas const by id
   const pixelCanvas = $('#pixelCanvas');
 
-  // When size is submitted by the user, call makeGrid()
+  //submit button event func to call makeGrid()
   sizePicker.submit(function(event) {
-    // Draw grid based on input values
+    //call makeGrid and pass user selected Height and Width values
     makeGrid(inputWidth.val(), inputHeight.val());
-    // prevent page refresh on submit
+    //stop page refresh on submit
     event.preventDefault();
   });
 
-  // When a canvas cell is left-clicked fill the corresponding colorPicker color in it, if right clicked then unfill the color
 
   pixelCanvas.on('mousedown','td',function (e){//look for mouse down event
      if (e.which == 1) {// this is left click event.
@@ -31,30 +30,31 @@
   });
 
 
-  function makeGrid(w,h) {
+  function makeGrid(gWidth,gHeight) {
     pixelCanvas.children().remove();
-    const tr_html = '<tr></tr>';
-    const td_html = '<td style="background-color:#FFFFFF;"><span style="width:10px;height:10px;"></span></td>';
-    let tr = $(tr_html);
-    let td = $(td_html);
-    for (let rows = 0; rows < w; rows++){
-      tr.remove();
-      for (let cols = 0; cols < h; cols++) {
-        tr.append(td_html);
+    const tr_tag = '<tr></tr>';
+	const td_tag = '<td style="background-color:#FFFFFF;"></td>';
+    //const td_tag = '<td style="background-color:#FFFFFF;"><span style="width:10px;height:10px;"></span></td>';
+    let tr = $(tr_tag);
+    let td = $(td_tag);
+    for (let rows = 0; rows < gWidth; rows++){
+      //tr.remove();
+      for (let cols = 0; cols < gHeight; cols++) {
+        tr.append(td_tag);
       }
       pixelCanvas.append(tr);
-      tr = $(tr_html);
+      tr = $(tr_tag);
     }
   }
   
   function onHover(){
-    $("#me").attr('src', 'eyeball.gif');
+    $("#eyeball").attr('src', 'images/eyeball.gif');
 	$('h1').css({'color' : 'blue'});
 	sleep();
 }
 
   function offHover(){
-    $("#me").attr('src', 'eyeball1.png');
+    $("#eyeball").attr('src', 'images/eyeball1.png');
 	$('h1').css({'color' : 'black'});
   }
 	
