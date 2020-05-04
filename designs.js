@@ -1,36 +1,37 @@
-//variables to get canvas element,height,width
-const c = document.getElementById('pixel_canvas');
-let temph = $("#input_height");
-let tempw = $("#input_width");
+// Select size input
+var height, width, paint;
+// When size is submitted by the user, call makeGrid()
+$("#sizePicker").submit(function (event) {
+    event.preventDefault();
+    height = $("#inputHeight").val();
+    width = $("#inputWidth").val();
+    makeGrid(height, width);
 
-//An event listener that comes into action when Submit button is clicked .
-$('#input_submit').click(function(e) {
-    e.preventDefault();
-    makeGrid();
 });
 
-let color = $("#colorPicker");
-
-//To make the grid pattern makegrid is called whenever button is clicked.
-function makeGrid() {
-
-    c.innerHTML = '';
-    let height = temph.val();
-    let width = tempw.val();
-
-    //A function which fills color in the cell that was clicked and changes the color.
-    let addEvent = function(cell) {
-        cell.addEventListener('click', function() {
-            cell.style.backgroundColor = color.val();
-        });
+// Creating table rows and table data
+function makeGrid(height, width) {
+// remove current grid if one exists
+    $("tr").remove();
+for (var i = 1; i <= height; i++) {
+       $("#pixelCanvas").append("<tr></tr>");
+           for (var j = 0; j < width; j++) {
+             $('tr:last-child').append('<td></td>');
+             $('td').attr("class", 'color');
+           }
+}
+    
+// Function to Paint td with color and also remove color
+// Adding and removing color to table data
+// When table data is clicked by a user, add background color or revert change to table data
+    
+$('td').click(function (event){
+    var paint = $('#colorPicker').val();
+    if($(this).attr('style')){
+      $(this).removeAttr('style');
     }
-
-    //An event listener such that whenever any cell is clicked it calls addEvent function and changes it's color.
-    for (let i = 0; i < height; i++) {
-        let row = c.insertRow(i);
-        for (let j = 0; j < width; j++) {
-            let cell = row.insertCell(j);
-            cell.addEventListener('click', addEvent(cell));
-        }
-    }
+    else {
+      $(this).attr('style', 'background-color:' + paint);
+    };
+  });
 }
