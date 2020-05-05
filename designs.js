@@ -37,6 +37,7 @@
     //const td_tag = '<td style="background-color:#FFFFFF;"><span style="width:10px;height:10px;"></span></td>';
     let tr = $(tr_tag);
     let td = $(td_tag);
+	console.log(tr_tag);
     for (let rows = 0; rows < gWidth; rows++){
       //tr.remove();
       for (let cols = 0; cols < gHeight; cols++) {
