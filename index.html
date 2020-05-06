@@ -7,12 +7,11 @@
 </head>
 <body>
     <h1 id="header1" >Pixel Art Maker</h1>
-
-	
-	<a href="#" id="img_anchor">
-    <img id="eyeball" src="images/eyeball1.png" alt="eyeball" width="75" height="75" onmouseover="onHover();" 
-      onmouseout="offHover();"/>
-	</a><br>
+	<h2>Udacity Intro to Programming Nanodegree</h2>
+	<a href="http://www.ricksepulveda.com" id="img_anchor">
+		<img id="eyeball" src="images/eyeball1.png" alt="ricksepulveda.com" width="75" height="75" onmouseover="onHover();" 
+		onmouseout="offHover();"/>
+	</a>
     <h2>Choose Grid Size</h2>
     <form id="sizePicker">
         Grid Height:
@@ -21,14 +20,12 @@
         <input type="number" id="inputWidth" name="width" min="1" value="1" max=30>
         <input type="submit">
     </form>
-
     <h2>Pick A Color</h2>
     <input type="color" id="colorPicker">
-
     <h2>Design Canvas</h2>
     <table id="pixelCanvas"></table>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js""></script>
     <script src="designs.js"></script>
-	
+
 </body>
 </html>
