@@ -10,7 +10,7 @@
     event.preventDefault();//stop page refresh on submit
   });
 
-  pixelCanvas.on('mousedown','td',function (e){//look for mouse down event
+  pixelCanvas.on('mousedown','td',function (e){//look for mouse down event on the table td
      if (e.which == 1) {// this is left click event.
        $(this).css('background-color',colorPicker.val());//td background color to colorpicker value
       }
