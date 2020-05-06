@@ -34,12 +34,12 @@
     }
   }
   
-  function onHover(){
+  function onHover(){//on Hover change to animated gif and change h1 to blue
     $("#eyeball").attr('src', 'images/eyeball.gif');
 	$('h1').css({'color' : 'blue'});
 }
 
-  function offHover(){
+  function offHover(){//off Hover change to static png and change h1 to black
     $("#eyeball").attr('src', 'images/eyeball1.png');
 	$('h1').css({'color' : 'black'});
   }
