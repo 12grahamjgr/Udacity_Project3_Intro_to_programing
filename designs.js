@@ -1,4 +1,4 @@
-  //setup variables
+  //setup const variables
   const colorPicker = $('#colorPicker');//Setup colorpicker const by id
   const sizePicker = $('#sizePicker');//Setup sizePicker const by id
   const inputHeight = $('#inputHeight');//Setup user inputHeight const by id
@@ -26,11 +26,10 @@
     let tr = $(tr_tag);//setup tr to append to
 	
     for (let rows = 0; rows < gWidth; rows++){//loop to build table rows
-      //tr.remove();
       for (let cols = 0; cols < gHeight; cols++) {//loop to build table column
         tr.append(td_tag);//append td_tag to tr (table row)
       }
-      pixelCanvas.append(tr);//append tr object to pixelCanvas object
+      pixelCanvas.append(tr);//append tr to pixelCanvas
       tr = $(tr_tag);//re-set tr to new row
     }
   }
