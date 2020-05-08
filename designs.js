@@ -25,8 +25,8 @@
 	const td_tag = '<td style="background-color:#FFFFFF;"></td>';//set html table column/data tags to const
     let tr = $(tr_tag);//setup tr to append to
 	
-    for (let rows = 0; rows < gWidth; rows++){//loop to build table rows
-      for (let cols = 0; cols < gHeight; cols++) {//loop to build table column
+    for (let rows = 0; rows < gHeight; rows++){//loop to build table rows
+      for (let cols = 0; cols < gWidth; cols++) {//loop to build table column
         tr.append(td_tag);//append td_tag to tr (table row)
       }
       pixelCanvas.append(tr);//append tr to pixelCanvas
