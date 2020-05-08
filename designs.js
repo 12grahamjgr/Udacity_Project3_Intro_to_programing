@@ -20,7 +20,7 @@
   });
 
   function makeGrid(gWidth,gHeight) {//function to create page grid
-    pixelCanvas.children().remove();//remove any appended pixelcanvas objects
+    pixelCanvas.children().remove();//remove any appended pixelcanvas table
     const tr_tag = '<tr></tr>';//set html table row tags to const
 	const td_tag = '<td style="background-color:#FFFFFF;"></td>';//set html table column/data tags to const
     let tr = $(tr_tag);//setup tr to append to
