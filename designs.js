@@ -10,11 +10,11 @@
     event.preventDefault();//stop page refresh on submit
   });
 
-  pixelCanvas.on('mousedown','td',function (e){//look for mouse down event on the table td
-     if (e.which == 1) {// this is left click event.
+  pixelCanvas.on('mousedown','td',function (event){//look for mouse down event on the table td
+     if (event.which == 1) {// this is left click event.
        $(this).css('background-color',colorPicker.val());//td background color to colorpicker value
       }
-     if (e.which == 3) {// this is right click event.
+     if (event.which == 3) {// this is right click event.
        $(this).css('background-color',"#FFFFFF");  // change table cell back to white
       }
   });
@@ -22,15 +22,16 @@
   function makeGrid(gWidth,gHeight) {//function to create page grid
     pixelCanvas.children().remove();//remove any appended pixelcanvas objects
     const tr_tag = '<tr></tr>';//set html table row tags to const
-	const td_tag = '<td style="background-color:#FFFFFF;"></td>';//set html table column tags to const
-    let tr = $(tr_tag);//create object from tr_tag
+	const td_tag = '<td style="background-color:#FFFFFF;"></td>';//set html table column/data tags to const
+    let tr = $(tr_tag);//setup tr to append to
+	
     for (let rows = 0; rows < gWidth; rows++){//loop to build table rows
       //tr.remove();
       for (let cols = 0; cols < gHeight; cols++) {//loop to build table column
-        tr.append(td_tag);//append td_tag to tr (table row) object
+        tr.append(td_tag);//append td_tag to tr (table row)
       }
       pixelCanvas.append(tr);//append tr object to pixelCanvas object
-      tr = $(tr_tag);//create a new (table row) object from tr_tag
+      tr = $(tr_tag);//re-set tr to new row
     }
   }
   
