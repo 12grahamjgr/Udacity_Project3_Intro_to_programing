@@ -1,8 +1,8 @@
-  
+  //setup variables
   const colorPicker = $('#colorPicker');//Setup colorpicker const by id
   const sizePicker = $('#sizePicker');//Setup sizePicker const by id
-  const inputHeight = $('#inputHeight');//Setup user input Height const by id
-  const inputWidth = $('#inputWidth');//Setup user input Width const by id
+  const inputHeight = $('#inputHeight');//Setup user inputHeight const by id
+  const inputWidth = $('#inputWidth');//Setup user inputWidth const by id
   const pixelCanvas = $('#pixelCanvas');//Setup pixelCanvas const by id
   
   sizePicker.submit(function(event) {//submit button event func to call makeGrid()
@@ -36,11 +36,11 @@
   }
   
   function onHover(){//on Hover change to animated gif and change h1 to blue
-    $("#eyeball").attr('src', 'images/eyeball.gif');
+    $('#eyeball').attr('src', 'images/eyeball.gif');
 	$('h1').css({'color' : 'blue'});
 }
 
   function offHover(){//off Hover change to static png and change h1 to black
-    $("#eyeball").attr('src', 'images/eyeball1.png');
+    $('#eyeball').attr('src', 'images/eyeball1.png');
 	$('h1').css({'color' : 'black'});
   }
